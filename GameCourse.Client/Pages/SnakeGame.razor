@@ -1,0 +1,44 @@
+﻿@page "/snake"
+<h3>SnakeGame</h3>
+
+@code {
+    class Playground
+    {
+        int Width { get; }
+        int Height { get; }
+    }
+
+    class Cell
+    {
+        int X { get; }
+        int Y { get; }
+    }
+
+    class Snake
+    {
+        List<Cell> SnakeBody { get; }
+
+        int Size
+        {
+            get
+            {
+                return SnakeBody.Count;
+            }
+        }
+
+        Cell Head
+        {
+            get
+            {
+                return SnakeBody[0];
+            }
+        }
+        Cell Tail
+        {
+            get
+            {
+                return SnakeBody[SnakeBody.Count - 1];
+            }
+        }
+    }
+}
